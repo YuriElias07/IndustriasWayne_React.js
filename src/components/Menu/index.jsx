@@ -25,7 +25,6 @@ export const Menu = () => {
         </div>
         <nav className="nav">
           <ul>
-            <li>DASHBOARD</li>
             <li>CONTACTS</li>
           </ul>
         </nav>
