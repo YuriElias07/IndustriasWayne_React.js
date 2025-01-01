@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body{
   background-color: #010101;
 }
@@ -145,7 +149,7 @@ body{
   display: flex;
   flex-direction: row;
   gap: 30px;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
   color: white;

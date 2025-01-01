@@ -16,7 +16,7 @@ export const Menu = () => {
         <div className="logoWayne">
           <Link to={"/"}>
             {" "}
-            <img style={{width: 130}} src={logo} alt="logo" />
+            <img style={{ width: 130 }} src={logo} alt="logo" />
           </Link>
 
           <h1>
@@ -25,7 +25,7 @@ export const Menu = () => {
         </div>
         <nav className="nav">
           <ul>
-            <li>CONTACTS</li>
+            <li><a style={{textDecoration: 'none', color: 'white'}} href="#contacts">CONTACTS</a></li>
           </ul>
         </nav>
       </header>
@@ -57,9 +57,42 @@ export const Menu = () => {
         <video id="bgvideo" src={video} autoPlay muted loop></video>
       </section>
       <footer id="footer_wayne_menu">
-        <h2 className="rodape_titulo">Infinity School</h2>
-        <p className="rodape_texto">Projeto Industrias Bruce Wayne</p>
-        <p className="rodape_dev">Desenvolvido por: Yuri Elias Alcântara</p>
+        <div id="contacts" style={{ display: "flex", flexDirection: "row", paddingLeft: 50, justifyContent: "center", alignItems: "center" }}>
+          <a href="">
+            <img
+              style={{ width: 30 }}
+              src="https://logodownload.org/wp-content/uploads/2018/03/gmail-logo-2-1.png"
+              alt=""
+            />
+          </a>
+          <a href="">
+            <img
+              style={{ width: 30, backgroundColor: "white", borderRadius: 50, marginLeft: 20 }} 
+              src="https://cdn-icons-png.flaticon.com/256/25/25231.png"
+              alt=""
+            />
+          </a>
+          <a href="">
+            <img
+              style={{ width: 50, borderRadius: 50, marginLeft: 10 }}
+              src="https://static.vecteezy.com/system/resources/previews/018/930/480/non_2x/linkedin-logo-linkedin-icon-transparent-free-png.png"
+              alt=""
+            />
+          </a>
+        </div>
+
+        <div
+          style={{
+            textAlign: "center",
+            display: "flex",
+            flexDirection: "row",
+            gap: 30,
+          }}
+        >
+          <h2 className="rodape_titulo">Infinity School</h2>
+          <p className="rodape_texto">Projeto Industrias Bruce Wayne</p>
+          <p className="rodape_dev">Desenvolvido por: Yuri Elias Alcântara</p>
+        </div>
       </footer>
     </>
   );
