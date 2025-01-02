@@ -70,6 +70,10 @@
   opacity: 0.5;
 }
 
+#bg_img{
+  display: none;
+}
+
 .card_arsenal:hover {
   transform: scale(1.02);
   cursor: pointer;
@@ -210,6 +214,22 @@
     align-items: center;
   }
 
+  #video_arsenal {
+    display: none;
+  }
+  
+  #bg_img{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.5;
+  }
+
   #image {
     width: 100px;
     margin: 0;
@@ -244,15 +264,6 @@
   .container_carousel {
     padding-top: 50%;
     width: 90%;
-  }
-
-  .slick-list {
-    overflow: hidden !important;
-  }
-  
-  .slick-track {
-    display: flex !important;
-    width: 100% !important;
   }
   
 

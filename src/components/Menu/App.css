@@ -64,6 +64,10 @@ body{
   opacity: 0.6;
 }
 
+#bg_mobile{
+  display: none;
+}
+
 .welcome {
   font-size: 30px;
   font-family: 'BatmanForeverOutline', sans-serif;
@@ -194,6 +198,22 @@ body{
 
   .nav li {
     padding: 10px;
+  }
+
+  #bgvideo {
+    display: none;
+  }
+  
+  #bg_mobile{
+    display: block;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.3;
   }
   
   .logoWayne {

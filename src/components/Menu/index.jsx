@@ -61,6 +61,7 @@ export const Menu = () => {
             </Link>
           </div>
         </div>
+        <img id="bg_mobile" src="https://applescoop.org/image/wallpapers/iphone/batman-dark-cartoon-tv-show-comic-book-comicbook-17-09-2024-1726571015.webp" alt="" />
         <video id="bgvideo" src={video} autoPlay muted loop></video>
       </section>
       <footer id="footer_wayne_menu">
