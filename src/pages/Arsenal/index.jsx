@@ -2,7 +2,7 @@ import "../Arsenal/style.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import logo from "../../assets/logoArsenal.png";
-import video from "../../assets/Gotham.mp4";
+import bg_img from "../../assets/bg_image_web.jpg";
 import audioTransitionCarousel from "../../assets/sounds/transition.mp3";
 import audio_click from "../../assets/sounds/click-151673.mp3";
 import { Link, Outlet } from "react-router-dom";
@@ -98,7 +98,7 @@ export const Arsenal = () => {
         </nav>
       </header>
       <img id="bg_img" src="https://applescoop.org/image/wallpapers/iphone/batman-dark-cartoon-tv-show-comic-book-comicbook-17-09-2024-1726571015.webp" alt="" />
-      <video id="video_arsenal" src={video} autoPlay muted loop></video>
+      <img id="video_arsenal" src={bg_img}/>
       <section className="sec1">
       <Outlet />
         <div className="container_carousel">

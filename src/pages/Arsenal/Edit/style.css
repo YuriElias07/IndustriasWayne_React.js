@@ -154,3 +154,12 @@ input {
   font-family: 'BatmanForeverOutline', sans-serif;
   font-weight: bold;
 }
+
+@media screen and (max-width: 768px) {
+  .add-box {
+    padding: 50px;
+    width: 250px;
+    background-color: #1e1e1e;
+  }
+  
+}

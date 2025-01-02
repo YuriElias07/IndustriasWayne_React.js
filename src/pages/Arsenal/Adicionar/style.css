@@ -160,7 +160,7 @@ input {
   font-weight: bold;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
 
   #sec1{
     display: grid;
@@ -175,5 +175,6 @@ input {
     padding-top: 50%;
     z-index: 50;
   }
+
   
 }

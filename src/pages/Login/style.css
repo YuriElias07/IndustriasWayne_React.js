@@ -157,7 +157,7 @@ input {
   font-weight: bold;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   #sec1 {
     display: grid;
     align-items: center;
@@ -169,5 +169,15 @@ input {
     align-items: center;
     justify-content: center;
     margin-top: 0%;
+  }
+
+  .login-box {
+    position: relative;
+    padding: 50px;
+    width: 250px;
+    background-color: #1f1f1f;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
   }
 }
