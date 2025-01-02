@@ -5,12 +5,13 @@
   align-items: center;
   color: #fff;
   padding: 10px;
-  width: 100vw;
+  width: 100%;
   z-index: 10;
 }
 
-.nav ul {
+.nav .menu {
   display: flex;
+  flex-direction: row;
   gap: 50px;
   list-style: none;
   padding: 0;
@@ -30,22 +31,26 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  font-family: 'BatmanForeverOutline', sans-serif;
+  font-family: "BatmanForeverOutline", sans-serif;
   font-weight: bold;
   font-size: 15px;
 }
 
-.logoWayne h1{
+.logoWayne h1 {
   font-size: 20px;
   font-family: "BatmanForeverOutline", sans-serif;
   font-weight: bold;
 }
 
+#image {
+  width: 150px;
+  padding-left: 50px;
+}
 
 .sec1 {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -70,6 +75,14 @@
   cursor: pointer;
 }
 
+#search {
+  border-radius: 10px;
+  border-width: 1px;
+  padding: 10px;
+  font-size: 15px;
+  background-color: #1e1e1e22;
+}
+
 .foto {
   width: 270px;
   height: 200px;
@@ -78,7 +91,7 @@
 }
 
 .container_carousel {
-  padding-top: 10%;
+  padding-top: 13%;
   width: 90%;
 }
 
@@ -89,6 +102,15 @@
   font-size: 30px;
   color: white;
   z-index: 1;
+}
+
+.detalhe {
+  max-width: 250px;
+  margin: 15px;
+  font-size: 15px;
+  word-spacing: 1px;
+  font-family: "International Super Hero Light";
+  color: white;
 }
 
 .delete-btn {
@@ -139,4 +161,129 @@
   background-color: #1e1e1e;
   border-radius: 20px;
   padding: 1.5px;
+}
+
+.nome {
+  font-family: "International Super Hero";
+  font-size: 23px;
+  font-weight: "bold";
+  margin-bottom: 5px;
+  color: white;
+}
+
+@media screen and (max-width: 1100px) {
+
+  #screen-dimmer-overlay{
+    background-color: #fff;
+  }
+
+  .header_arsenal {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    width: 100%;
+    padding-right: 0;
+    z-index: 10;
+  }
+
+  .nav .menu {
+    padding-right: 0px;
+  }
+
+  .nav li {
+    cursor: pointer;
+    font-family: "BatmanForeverOutline", sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 12px;
+  }
+
+  .nav .menu {
+    display: flex;
+    gap: 0px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-right: 0px;
+    align-items: center;
+  }
+
+  #image {
+    width: 100px;
+    margin: 0;
+    padding: 10px;
+    padding-left: 0px;
+  }
+
+  .logoWayne h1 {
+    display: none;
+  }
+
+
+  .titleGun {
+    margin-bottom: 10%;
+    font-family: "BatmanForeverOutline", sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+  }
+
+  #search {
+    display: grid;
+    border-radius: 50px;
+    border-width: 1px;
+    padding: 7px;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    max-width: 80%;
+    font-family: "International Super Hero";
+  }
+
+  .container_carousel {
+    padding-top: 50%;
+    width: 90%;
+  }
+
+  .slick-list {
+    overflow: hidden !important;
+  }
+  
+  .slick-track {
+    display: flex !important;
+    width: 100% !important;
+  }
+  
+
+  .foto {
+    width: 150px;
+    height: 100px;
+  }
+
+  .nome {
+    font-size: 12px;
+    max-width: 170px;
+    margin-bottom: 0;
+  }
+
+  .detalhe {
+    font-size: 8px;
+    max-width: 150px;
+    max-height: 40px;
+    margin: 4px;
+    margin-bottom: 15px;
+  }
+
+  .edit-btn {
+    padding: 4px;
+    border-radius: 30%;
+    font-size: 13px;
+  }
+
+  .delete-btn {
+    padding: 4px;
+    border-radius: 30%;
+    font-size: 13px;
+  }
 }

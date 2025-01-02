@@ -5,10 +5,8 @@ import logo from "../../assets/logoArsenal.png";
 import video from "../../assets/Gotham.mp4";
 import audioTransitionCarousel from "../../assets/sounds/transition.mp3";
 import audio_click from "../../assets/sounds/click-151673.mp3";
-import backgroundAudio from "../../assets/sounds/wind-ambience-14720.mp3";
 import { Link, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import Slider from "react-slick";
 import { fetchArsenal, handleDelete } from "../../services/API";
 import { FaTrash, FaEdit, FaRegEdit, FaUserEdit } from "react-icons/fa";
@@ -33,7 +31,7 @@ export const Arsenal = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: true,
     focusOnSelect: true,
@@ -48,15 +46,17 @@ export const Arsenal = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 1,
+          arrows: false,
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
+          arrows: false,
         },
       },
     ],
@@ -66,7 +66,6 @@ export const Arsenal = () => {
     fetchArsenal(setListArsenal);
   }, []);
 
-  // Filtrar itens com base na pesquisa
   const filteredArsenal = list_arsenal.filter((item) =>
     item.nome.toLowerCase().includes(searchArsenal.toLowerCase())
   );
@@ -76,26 +75,20 @@ export const Arsenal = () => {
       <header className="header_arsenal">
         <div className="logoWayne">
           <Link to={"/arsenal"}>
-            <img style={{ width: 130 }} src={logo} alt="logo" />
+            <img id="image" src={logo} alt="logo" />
           </Link>
           <h1>
             Indústria <br /> Bruce Wayne
           </h1>
         </div>
         <nav className="nav">
-          <ul>
+          <ul className="menu">
             <Link to={"/arsenal/add"}>
               <li onClick={handleClick}>ADICIONAR</li>
             </Link>
             <li>
               <input
-                style={{
-                  borderRadius: 10,
-                  borderWidth: 1,
-                  padding: 10,
-                  fontSize: 15,
-                  backgroundColor: "#1e1e1e22",
-                }}
+              id="search"
                 type="text"
                 placeholder="PESQUISAR"
                 onChange={(e) => setSearchArsenal(e.target.value)}
@@ -104,9 +97,9 @@ export const Arsenal = () => {
           </ul>
         </nav>
       </header>
-      <Outlet />
       <video id="video_arsenal" src={video} autoPlay muted loop></video>
       <section className="sec1">
+      <Outlet />
         <div className="container_carousel">
           <h1 className="titleGun">ITENS WAYNE</h1>
           <Slider {...slickSettings}>
@@ -144,28 +137,10 @@ export const Arsenal = () => {
                     />
                   </div>
 
-                  <h2
-                    style={{
-                      fontFamily: "International Super Hero",
-                      fontSize: 23,
-                      fontWeight: "bold",
-                      maxWidth: 300,
-                      marginBottom: 5,
-                      color: "white",
-                    }}
-                  >
+                  <h2 className="nome">
                     {element.nome}
                   </h2>
-                  <p
-                    style={{
-                      maxWidth: 300,
-                      marginBottom: 15,
-                      fontSize: 15,
-                      wordSpacing: 1,
-                      fontFamily: "International Super Hero Light",
-                      color: "white",
-                    }}
-                  >
+                  <p className="detalhe">
                     {element.detalhe}
                   </p>
                 </div>

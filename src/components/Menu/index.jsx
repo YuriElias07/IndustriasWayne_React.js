@@ -16,7 +16,7 @@ export const Menu = () => {
         <div className="logoWayne">
           <Link to={"/"}>
             {" "}
-            <img style={{ width: 130 }} src={logo} alt="logo" />
+            <img src={logo} alt="logo" />
           </Link>
 
           <h1>
@@ -25,7 +25,14 @@ export const Menu = () => {
         </div>
         <nav className="nav">
           <ul>
-            <li><a style={{textDecoration: 'none', color: 'white'}} href="#contacts">CONTACTS</a></li>
+            <li>
+              <a
+                style={{ textDecoration: "none", color: "white" }}
+                href="#contacts"
+              >
+                CONTACTS
+              </a>
+            </li>
           </ul>
         </nav>
       </header>
@@ -57,7 +64,7 @@ export const Menu = () => {
         <video id="bgvideo" src={video} autoPlay muted loop></video>
       </section>
       <footer id="footer_wayne_menu">
-        <div id="contacts" style={{ display: "flex", flexDirection: "row", paddingLeft: 50, justifyContent: "center", alignItems: "center" }}>
+        <div id="contacts">
           <a href="">
             <img
               style={{ width: 30 }}
@@ -67,7 +74,12 @@ export const Menu = () => {
           </a>
           <a href="">
             <img
-              style={{ width: 30, backgroundColor: "white", borderRadius: 50, marginLeft: 20 }} 
+              style={{
+                width: 30,
+                backgroundColor: "white",
+                borderRadius: 50,
+                marginLeft: 20,
+              }}
               src="https://cdn-icons-png.flaticon.com/256/25/25231.png"
               alt=""
             />
@@ -81,14 +93,7 @@ export const Menu = () => {
           </a>
         </div>
 
-        <div
-          style={{
-            textAlign: "center",
-            display: "flex",
-            flexDirection: "row",
-            gap: 30,
-          }}
-        >
+        <div className="rodape">
           <h2 className="rodape_titulo">Infinity School</h2>
           <p className="rodape_texto">Projeto Industrias Bruce Wayne</p>
           <p className="rodape_dev">Desenvolvido por: Yuri Elias Alcântara</p>

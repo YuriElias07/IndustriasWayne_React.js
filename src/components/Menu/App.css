@@ -42,6 +42,7 @@ body{
 }
 
 .logoWayne img {  
+  width: 130px;
   padding-left: 50px;
 }
 
@@ -56,8 +57,8 @@ body{
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
   z-index: 0;
   opacity: 0.6;
@@ -69,6 +70,7 @@ body{
   font-weight: bold;
   position: relative;
   z-index: 1;
+  padding-left: 5%;
 }
 
 .textWelcome {
@@ -77,6 +79,7 @@ body{
   line-height: 1.5;
   font-size: 17px;
   z-index: 1;
+  padding-left: 5%;
 }
 
 .containerWelcome{
@@ -84,7 +87,6 @@ body{
   flex-direction: column;
   gap: 20px;
   padding-top: 14%;
-  padding-left: 10%;
 }
 
 .containerAll{
@@ -154,4 +156,117 @@ body{
   padding: 20px;
   color: white;
   background-color: #1e1e1e;
+}
+
+.rodape{
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+#contacts{
+    display: flex;
+    flex-direction: row;
+    padding-left: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+
+  .header_menu {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 0px;
+    width: 100%;
+    z-index: 10;
+  }
+  
+  .nav ul {
+    padding-right: 0px;
+  }
+
+  .nav li {
+    padding: 10px;
+  }
+  
+  .logoWayne {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: 'BatmanForeverOutline', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  
+  .logoWayne img {  
+    width: 70px;
+    padding-left: 0px;
+    padding: 10px;
+  }
+  
+  .sec1_menu {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    color: #fff;
+  }
+  
+  .welcome {
+    font-size: 16px;
+    max-width: 90%;
+    margin-top: 20%;
+    padding-left: 3%;
+  }
+  
+  .textWelcome {
+    position: relative;
+    max-width: 90%;
+    line-height: 1.5;
+    font-size: 13px;
+    z-index: 1;
+    padding-left: 3%;
+  }
+  
+  .containerWelcome{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100vw;
+  }
+  
+  .containerAll{
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+  }
+  
+  .containerButton{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: end;
+    padding-right: 10%;
+    z-index: 1;
+  }
+  
+  #footer_wayne_menu{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rodape{
+    display: none;
+  }
+
+  #contacts{
+    padding-left: 0px;
+  }
 }

@@ -159,3 +159,21 @@ input {
   font-family: 'BatmanForeverOutline', sans-serif;
   font-weight: bold;
 }
+
+@media screen and (max-width: 768px) {
+
+  #sec1{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .add-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50%;
+    z-index: 50;
+  }
+  
+}
