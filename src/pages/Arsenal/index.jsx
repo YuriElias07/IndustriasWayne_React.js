@@ -36,7 +36,7 @@ export const Arsenal = () => {
   const slickSettings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 700,
     slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: true,
@@ -48,6 +48,8 @@ export const Arsenal = () => {
     autoplay: true,
     autoplaySpeed: 2500,
     pauseOnHover: true,
+    cssEase: 'ease-in-out',
+    swipeToSlide: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -77,7 +79,7 @@ export const Arsenal = () => {
   );
 
   const handleLogout = () => {
-    localStorage.removeItem("authenticated");
+    localStorage.removeItem("authenticated", false);
     navigate("/");
   };
 

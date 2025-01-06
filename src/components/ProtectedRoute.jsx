@@ -1,12 +1,8 @@
 import { Navigate } from "react-router-dom";
+import React from "react";
 
 export const ProtectedRoute = ({ children }) => {
-  const authenticated = localStorage.getItem("authenticated");
+  const user = localStorage.getItem("authenticated", false);
 
-  if (!authenticated) {
-    alert("Você precisa estar logado para acessar essa página.");
-    return <Navigate to="/" />;
-  }
-
-  return children;
+  return user ? children : <Navigate to="/login" />;
 };

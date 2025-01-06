@@ -30,8 +30,6 @@ export const Login = () => {
       (user) => user.login === username && user.senha === password
     );
 
-    localStorage.setItem("authenticated", "true");
-
     if (users) {
       const successAudio = new Audio(success);
       successAudio.volume = 0.2;
@@ -111,7 +109,7 @@ export const Login = () => {
           ) : (
             <div className="success-container">
               <Lottie animationData={animation} />
-              <h2 className="login-h2">Bem-vindo!</h2>
+              <h2 className="login-h2">Bem-vindo, {username}!</h2>
             </div>
           )}
         </div>
