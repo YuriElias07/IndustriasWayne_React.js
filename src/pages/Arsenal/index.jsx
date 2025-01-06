@@ -78,7 +78,7 @@ export const Arsenal = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("authenticated");
-    navigate("/login");
+    navigate("/");
   };
 
   return (
