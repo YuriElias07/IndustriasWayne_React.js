@@ -5,7 +5,7 @@ export const ProtectedRoute = ({ children }) => {
 
   if (!authenticated) {
     alert("Você precisa estar logado para acessar essa página.");
-    return <Navigate to="/login" />;
+    return <Navigate to="/" />;
   }
 
   return children;
