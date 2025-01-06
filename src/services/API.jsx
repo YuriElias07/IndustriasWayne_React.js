@@ -19,6 +19,16 @@ export const fetchArsenal = async (setListArsenal) => {
   }
 };
 
+export const fetchUser = async (setUser) => {
+  try {
+    const { data } = await axios.get("https://backend-industriaswayne.onrender.com/getusers");
+    setUser(data);
+  } catch (error) {
+    console.error("Erro ao carregar usuário:", error);
+    setUser([]);
+  }
+};
+
 export const handleEdit = async () => {
   try {
     const { data } = await axios.patch("https://backend-industriaswayne.onrender.com/patchArsenal");

@@ -63,6 +63,10 @@ body {
   color: #f1c40f;
 }
 
+.login-h2{
+  color: #f1c40f;
+}
+
 .input-group {
   display: flex;
   flex-direction: column;

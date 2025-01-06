@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
 import wrong from "../../assets/sounds/wrong.mp3";
@@ -6,27 +6,39 @@ import success from "../../assets/sounds/bem_vindo.mp3";
 import audio_click from "../../assets/sounds/click-151673.mp3";
 import Lottie from "lottie-react";
 import animation from "../../assets/animations/Animation - 1734464357784.json";
+import axios from "axios";
+import { fetchUser } from "../../services/API";
 
 export const Login = () => {
+  const [user, setUser] = useState([]);
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [authenticated, setAuthenticated] = useState(false);
   const [shake, setShake] = useState(false);
+
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchUser(setUser);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const correctUsername = "batman";
-    const correctPassword = "batcave";
+    const users = user.find(
+      (user) => user.login === username && user.senha === password
+    );
 
-    if (username === correctUsername && password === correctPassword) {
+    localStorage.setItem("authenticated", "true");
+
+    if (users) {
       const successAudio = new Audio(success);
       successAudio.volume = 0.2;
       successAudio.play();
       setAuthenticated(true);
       setShake(false);
+      localStorage.setItem("authenticated", true);
       setTimeout(() => {
         navigate("/arsenal");
       }, 3000);
@@ -99,7 +111,7 @@ export const Login = () => {
           ) : (
             <div className="success-container">
               <Lottie animationData={animation} />
-              <h2>Bem-vindo!</h2>
+              <h2 className="login-h2">Bem-vindo!</h2>
             </div>
           )}
         </div>

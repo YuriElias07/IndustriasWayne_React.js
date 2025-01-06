@@ -66,14 +66,14 @@ export const Menu = () => {
       </section>
       <footer id="footer_wayne_menu">
         <div id="contacts">
-          <a href="">
+          <a target="blank" href="mailto:yuririelias15@gmail.com?subject=Assunto%20do%20E-mail&body=Olá,%20gostaria%20de%20mais%20informações.">
             <img
               style={{ width: 30 }}
               src="https://logodownload.org/wp-content/uploads/2018/03/gmail-logo-2-1.png"
               alt=""
             />
           </a>
-          <a href="">
+          <a target="blank" href="https://github.com/YuriElias07">
             <img
               style={{
                 width: 30,
@@ -85,7 +85,7 @@ export const Menu = () => {
               alt=""
             />
           </a>
-          <a href="">
+          <a target="blank" href="https://www.linkedin.com/in/yuri-elias-491221255/">
             <img
               style={{ width: 50, borderRadius: 50, marginLeft: 10 }}
               src="https://static.vecteezy.com/system/resources/previews/018/930/480/non_2x/linkedin-logo-linkedin-icon-transparent-free-png.png"

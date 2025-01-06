@@ -9,7 +9,13 @@ import { Link, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { fetchArsenal, handleDelete } from "../../services/API";
-import { FaTrash, FaEdit, FaRegEdit, FaUserEdit } from "react-icons/fa";
+import {
+  FaTrash,
+  FaEdit,
+  FaRegEdit,
+  FaUserEdit,
+  FaSignOutAlt,
+} from "react-icons/fa";
 
 export const Arsenal = () => {
   const [list_arsenal, setListArsenal] = useState([]);
@@ -24,7 +30,7 @@ export const Arsenal = () => {
   const audioTransition = () => {
     const audio = new Audio(audioTransitionCarousel);
     audio.play();
-    audio.volume = 0.4;
+    audio.volume = 0.6;
   };
 
   const slickSettings = {
@@ -70,6 +76,11 @@ export const Arsenal = () => {
     item.nome.toLowerCase().includes(searchArsenal.toLowerCase())
   );
 
+  const handleLogout = () => {
+    localStorage.removeItem("authenticated");
+    navigate("/login");
+  };
+
   return (
     <>
       <header className="header_arsenal">
@@ -88,19 +99,36 @@ export const Arsenal = () => {
             </Link>
             <li>
               <input
-              id="search"
+                id="search"
                 type="text"
                 placeholder="PESQUISAR"
                 onChange={(e) => setSearchArsenal(e.target.value)}
               />
             </li>
+            <Link to={"/"}>
+              <li style={{paddingRight: 20}} onClick={() => {
+                          if (
+                            window.confirm(
+                              "Deseja realmente sair?"
+                            )
+                          ) {
+                            handleLogout();
+                          }
+                        }}>
+                <FaSignOutAlt size={25} />
+              </li>
+            </Link>
           </ul>
         </nav>
       </header>
-      <img id="bg_img" src="https://applescoop.org/image/wallpapers/iphone/batman-dark-cartoon-tv-show-comic-book-comicbook-17-09-2024-1726571015.webp" alt="" />
-      <img id="video_arsenal" src={bg_img}/>
+      <img
+        id="bg_img"
+        src="https://applescoop.org/image/wallpapers/iphone/batman-dark-cartoon-tv-show-comic-book-comicbook-17-09-2024-1726571015.webp"
+        alt=""
+      />
+      <img id="video_arsenal" src={bg_img} />
       <section className="sec1">
-      <Outlet />
+        <Outlet />
         <div className="container_carousel">
           <h1 className="titleGun">ITENS WAYNE</h1>
           <Slider {...slickSettings}>
@@ -118,11 +146,17 @@ export const Arsenal = () => {
                         </li>
                       </Link>
 
-                      <li onClick={() => {
-                        if (window.confirm("Deseja realmente deletar este item?")) {
-                          handleDelete(element.id, setListArsenal);
-                        }
-                      }}>
+                      <li
+                        onClick={() => {
+                          if (
+                            window.confirm(
+                              "Deseja realmente deletar este item?"
+                            )
+                          ) {
+                            handleDelete(element.id, setListArsenal);
+                          }
+                        }}
+                      >
                         <FaTrash className="delete-btn" />
                       </li>
                     </div>
@@ -138,12 +172,8 @@ export const Arsenal = () => {
                     />
                   </div>
 
-                  <h2 className="nome">
-                    {element.nome}
-                  </h2>
-                  <p className="detalhe">
-                    {element.detalhe}
-                  </p>
+                  <h2 className="nome">{element.nome}</h2>
+                  <p className="detalhe">{element.detalhe}</p>
                 </div>
               ))}
           </Slider>
