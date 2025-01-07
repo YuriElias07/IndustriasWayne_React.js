@@ -54,6 +54,7 @@ export const Arsenal = () => {
       {
         breakpoint: 1024,
         settings: {
+          dots: false,
           slidesToShow: 2,
           slidesToScroll: 1,
           arrows: false,
@@ -62,6 +63,7 @@ export const Arsenal = () => {
       {
         breakpoint: 768,
         settings: {
+          dots: false,
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: false,

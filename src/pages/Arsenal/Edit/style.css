@@ -155,7 +155,7 @@ input {
   font-weight: bold;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .add-box {
     padding: 50px;
     width: 250px;

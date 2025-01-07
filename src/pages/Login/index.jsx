@@ -8,6 +8,7 @@ import Lottie from "lottie-react";
 import animation from "../../assets/animations/Animation - 1734464357784.json";
 import axios from "axios";
 import { fetchUser } from "../../services/API";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export const Login = () => {
   const [user, setUser] = useState([]);
@@ -71,14 +72,16 @@ export const Login = () => {
             <form onSubmit={handleSubmit}>
               <div className="input-group">
                 <label htmlFor="username">Nome de Usuário</label>
-                <input
-                  type="text"
-                  id="username"
-                  name="username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  required
-                />
+                <div className="username-container">
+                  <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    required
+                  />
+                </div>
               </div>
 
               <div className="input-group">
@@ -92,13 +95,12 @@ export const Login = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                   />
-                  <button
-                    type="button"
-                    className="toggle-password"
+                  <span
+                    className="toggle-password-icon"
                     onClick={togglePasswordVisibility}
                   >
-                    {passwordVisible ? "Ocultar" : "Mostrar"}
-                  </button>
+                    {passwordVisible ? <FaEyeSlash /> : <FaEye />}
+                  </span>
                 </div>
               </div>
 

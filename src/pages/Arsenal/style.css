@@ -54,7 +54,7 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   text-align: center;
 }
@@ -95,7 +95,6 @@
 }
 
 .container_carousel {
-  padding-top: 13%;
   width: 90%;
 }
 
@@ -175,7 +174,7 @@
   color: white;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
   .titleGun {
     color: rgb(255, 179, 0);
   }
@@ -261,7 +260,6 @@
   }
 
   .container_carousel {
-    padding-top: 50%;
     width: 90%;
   }
   
