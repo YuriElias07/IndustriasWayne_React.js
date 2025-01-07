@@ -74,6 +74,11 @@
   display: none;
 }
 
+.card_arsenal {
+  width: 200px;
+  transition: ease-in-out 200ms;
+}
+
 .card_arsenal:hover {
   transform: scale(1.02);
   cursor: pointer;
